@@ -14,7 +14,7 @@ func ExamplePaymentSources() {
 		},
 		{
 			PAN:     "5058 xxxx xxxx 9999",
-			Balance: -50_000_05,
+			Balance: -50_000_00,
 			Active:  true,
 		},
 		{
@@ -23,10 +23,8 @@ func ExamplePaymentSources() {
 			Active:  false,
 		},
 	}
-
-	paymentSources := PaymentSources(cards)
-	for _, v := range paymentSources {
-		fmt.Println(v.Number)
-	} //Output: 5058 xxxx xxxx 8888
+	result := PaymentSources(cards)
+	fmt.Println(result[0].Number)
+	//Output: 5058 xxxx xxxx 8888
 
 }

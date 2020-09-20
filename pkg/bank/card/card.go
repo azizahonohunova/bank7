@@ -5,10 +5,10 @@ import (
 )
 
 func PaymentSources(cards []types.Card) []types.PaymentSource {
-	var PaymentCards []types.PaymentSources
+	var PaymentCards []types.PaymentSource
 	for _, card := range cards {
 		if card.Balance > 0 && card.Active {
-			PaymentCards = append(PaymentCards, types.PaymentSources{card.PAN, card.Balance})
+			PaymentCards = append(PaymentCards, types.PaymentSource{card.PAN, card.Balance})
 		}
 		return PaymentCards
 	}
