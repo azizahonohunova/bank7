@@ -23,8 +23,8 @@ func ExamplePaymentSources() {
 			Active:  false,
 		},
 	}
-	result := PaymentSources(cards)
-	fmt.Println(result[0].Number)
-	//Output: 5058 xxxx xxxx 8888
-
+	paymentSources := PaymentSources(card)
+	for _, v := range paymentSources {
+		fmt.Println(v.Number)
+	} //Output: 5058 xxxx xxxx 8888
 }
